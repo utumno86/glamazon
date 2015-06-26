@@ -5,24 +5,14 @@ RailsAdmin.config do |config|
   ## == Devise ==
   config.authenticate_with do
       warden.authenticate! scope: :user
+      config.current_user_method(&:current_user)
   end
-
-  config.current_user_method(&:current_user)
 
   RailsAdmin.config do |config|
-    config.authenticate_with do
-      warden.authenticate! scope: :admin
+    config.authorize_with do
+      redirect_to main_app.root_path unless warden.user.is_admin
     end
-    config.current_user_method(&:current_admin)
   end
-
-  ## == Cancan ==
-  # config.authorize_with :cancan
-
-  ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-
-  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do
     dashboard                     # mandatory
