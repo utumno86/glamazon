@@ -23,4 +23,8 @@
   <%= @item.price %>
 </p>
 
+<p>
+	 <%=link_to 'Add to Cart', update_cart_path(@item), class: "btn btn-small btn-danger"  %>
+</p>
+
 <%= link_to 'Back', items_path, class: "btn btn-small btn-primary" %>
