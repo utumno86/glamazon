@@ -83,6 +83,7 @@ Passwords and Credit Cards should never be logged or stored in plain text.
 You do not have to use the Payola gem, but it sure is nice.
 
 Mandrill is my go-to emailing service.
+
 ===================================
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
