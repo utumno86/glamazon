@@ -6,18 +6,8 @@
 </p>
 
 <p>
-  <strong>Short description:</strong>
-  <%= @item.short_description %>
-</p>
-
-<p>
   <strong>Description:</strong>
   <%= @item.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @item.image %>
 </p>
 
 <p>
@@ -25,5 +15,4 @@
   <%= @item.price %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back', items_path, class: "btn btn-small btn-primary" %>
