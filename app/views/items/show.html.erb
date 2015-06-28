@@ -10,6 +10,14 @@
   <%= @item.description %>
 </p>
 
+<% unless @item.image.blank?  %>
+		<p>
+			<strong>Image:</strong>
+			<p><%= image_tag(@item.image.url) %></p>
+
+		</p>
+<%end  %>
+
 <p>
   <strong>Price:</strong>
   <%= @item.price %>

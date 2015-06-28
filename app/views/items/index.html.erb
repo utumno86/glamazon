@@ -4,6 +4,11 @@
 
 <% @items.each do |item| %>
 		<h3><%= item.name %> </h3>
+		<p>
+			<%unless item.image.blank?%>
+			<%=  image_tag(item.image.thumb) %>
+		<%end%></p>
+		</p>
 		<p><<%= item.short_description %> /p>
-		<td><%= link_to 'Show', item, class: "btn btn-small btn-primary" %>
+		<%= link_to 'Show', item, class: "btn btn-small btn-primary" %>
 <%end  %>
