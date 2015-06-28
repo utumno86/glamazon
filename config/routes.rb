@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items
   resources :cart
-  patch '/cart', to: 'cart#update', as: 'update_cart'
 end
