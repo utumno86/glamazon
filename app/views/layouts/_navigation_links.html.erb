@@ -1,9 +1,35 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'About', page_path('about') %></li>
+<li><%= link_to page_path('about') do %>
+  		<i class="fa fa-info-circle"></i>
+  		About
+  		<% end %>
+  </li>
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+  <li><%= link_to edit_user_registration_path do %>
+  		<i class="fa fa-user"></i>
+  		Account
+  		<% end %>
+  </li>
+	<!-- replace with proper path when built -->
+	<li><%= link_to root_path do %>
+  		<i class="fa fa-shopping-cart"></i>
+  		Cart
+  		<% end %>
+  </li>
+	<li><%= link_to destroy_user_session_path, :method=>'delete' do %>
+  		<i class="fa fa-sign-out"></i>
+  		Sign Out
+  		<% end %>
+  </li>
 <% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+	<li><%= link_to new_user_session_path do %>
+  		<i class="fa fa-lock"></i>
+  		Sign In
+  		<% end %>
+  </li>
+  <li><%= link_to new_user_registration_path do %>
+  		<i class="fa fa-plus-square"></i>
+  		Sign Up
+  		<% end %>
+  </li>
 <% end %>

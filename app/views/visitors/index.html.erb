@@ -1,2 +1,66 @@
-<h3>Welcome</h3>
-<%= link_to 'See all items', items_path  %>
+<!-- index page with feature carousel -->
+
+<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#slider-carousel" data-slide-to="1"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li>
+						</ol>
+						
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-6">
+									<a href="index.html"><%= image_tag "logo_full.png" %></a>
+									<h2>Where Posh Cats Shop</h2>
+									<p>Check out the hottest fashions from Meowant Park's runways! </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<%= image_tag("cat_cleopatra.jpg", :class => "cat img-responsive") %>
+									<!-- <img src="images/home/pricing.png"  class="pricing" alt="" /> -->
+								</div>
+							</div>
+							<div class="item">
+								<div class="col-sm-6">
+									<a href="index.html"><%= image_tag "logo_full.png" %></a>
+									<h2>Where Posh Cats Shop</h2>
+									<p>Halloween is coming! Kitty is sure to get only treats in our new luchador masks! </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<%= image_tag("cat_luchas.jpg", :class => "cat img-responsive") %>
+									<!-- <img src="images/home/pricing.png"  class="pricing" alt="" /> -->
+								</div>
+							</div>
+							
+							<div class="item">
+								<div class="col-sm-6">
+									<a href="index.html"><%= image_tag "logo_full.png" %></a>
+									<h2>Where Posh Cats Shop</h2>
+									<p>You asked, and we delivered! Rainbow gLitter available now! </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<%= image_tag("bling_litter.jpg", :class => "cat img-responsive") %>
+									<!-- <img src="images/home/pricing.png" class="pricing" alt="" /> -->
+								</div>
+							</div>
+							
+						</div>
+						
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
