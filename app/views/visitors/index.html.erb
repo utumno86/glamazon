@@ -14,10 +14,10 @@
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
-									<a href="index.html"><%= image_tag "logo_full.png" %></a>
+									<a href="/"><%= image_tag "logo_full.png" %></a>
 									<h2>Where Posh Cats Shop</h2>
 									<p>Check out the hottest fashions from Meowant Park's runways! </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<%= link_to 'Get It Now', items_path, class: "btn btn-default get" %>
 								</div>
 								<div class="col-sm-6">
 									<%= image_tag("cat_cleopatra.jpg", :class => "cat img-responsive") %>
@@ -26,10 +26,10 @@
 							</div>
 							<div class="item">
 								<div class="col-sm-6">
-									<a href="index.html"><%= image_tag "logo_full.png" %></a>
+									<a href="/"><%= image_tag "logo_full.png" %></a>
 									<h2>Where Posh Cats Shop</h2>
 									<p>Halloween is coming! Kitty is sure to get only treats in our new luchador masks! </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<%= link_to 'Get It Now', items_path, class: "btn btn-default get" %>
 								</div>
 								<div class="col-sm-6">
 									<%= image_tag("cat_luchas.jpg", :class => "cat img-responsive") %>
@@ -39,10 +39,10 @@
 							
 							<div class="item">
 								<div class="col-sm-6">
-									<a href="index.html"><%= image_tag "logo_full.png" %></a>
+									<a href="/"><%= image_tag "logo_full.png" %></a>
 									<h2>Where Posh Cats Shop</h2>
 									<p>You asked, and we delivered! Rainbow gLitter available now! </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<%= link_to 'Get It Now', items_path, class: "btn btn-default get" %>
 								</div>
 								<div class="col-sm-6">
 									<%= image_tag("bling_litter.jpg", :class => "cat img-responsive") %>
