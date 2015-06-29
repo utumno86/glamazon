@@ -19,8 +19,9 @@
 					</thead>
 					<tbody>
 						<tr>
-							<% if @cart != nil %>
-								<%@cart.each do |item| %>
+							<% if @cart.quantity != nil %>
+								<%@cart.quantity.each do |i, number| %>
+											<% item = Item.find(i) %>
 											<%unless item.image.blank? %>
 												<td class="cart_product">
 												<%= image_tag(item.image.url) %>
@@ -28,13 +29,14 @@
 											<%end %>
 									<td class="cart_description">
 										<%= item.name %>
+										Quantity: <%= number  %>
 									<p>Web ID: <%= item.id %></p>
 									</td>
 									<td class="cart_price">
 										<p><%= item.price %></p>
 									</td>
-									<% @total_price += item.price %>
 								<% end %>
+									<p>Total: <%= @cart.price %></p>
 							<% else %>
 							<%= puts "Your cart is empty." %>
 							<% end %>
