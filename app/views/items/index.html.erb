@@ -6,10 +6,10 @@
 		<h3><%= item.name %> </h3>
 		<p>
 			<%unless item.image.blank?%>
-			<%=  image_tag(item.image.thumb) %>
+			<%= image_tag(item.image.thumb) %>
 		<%end%></p>
 		</p>
-		<p><<%= item.short_description %> /p>
+		<p><%= item.short_description %> /p>
 		<%= link_to 'Show', item, class: "btn btn-small btn-primary" %>
-<%end  %>
+<% end  %>
 <p><%=link_to 'Checkout', cart_index_path, class: "btn btn-small btn-primary"  %></p>
