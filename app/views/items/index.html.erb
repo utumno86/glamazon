@@ -4,12 +4,13 @@
 
 <% @items.each do |item| %>
 		<h3><%= item.name %> </h3>
-		<p>
+
 			<%unless item.image.blank?%>
+				<p>
 			<%= image_tag(item.image.thumb) %>
-		<%end%></p>
-		</p>
-		<p><%= item.short_description %> /p>
+				</p>
+		<%end%>
+		<p><%= item.short_description %> </p>
 		<%= link_to 'Show', item, class: "btn btn-small btn-primary" %>
 <% end  %>
-<p><%=link_to 'Checkout', cart_index_path, class: "btn btn-small btn-primary"  %></p>
+<p><%=link_to 'Cart', cart_index_path, class: "btn btn-small btn-primary"  %></p>

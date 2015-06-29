@@ -21,9 +21,11 @@
 						<tr>
 							<% if @cart != nil %>
 								<%@cart.each do |item| %>
-									<td class="cart_product">
-										<%= image_link(item.image) %>
-									</td>
+											<%unless item.image.blank? %>
+												<td class="cart_product">
+												<%= image_tag(item.image.url) %>
+												</td>
+											<%end %>
 									<td class="cart_description">
 										<%= item.name %>
 									<p>Web ID: <%= item.id %></p>
