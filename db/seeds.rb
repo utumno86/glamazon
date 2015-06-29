@@ -8,3 +8,13 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+30.times do
+  i = Item.new
+  i.name = Faker::Commerce.product_name
+  i.short_description = Faker::Company.bs
+  i.description = Faker::Lorem.paragraph
+  i.price = Faker::Commerce.price
+  i.remote_image_url = ("http://loremflickr.com/640/480/#{i.name.split.last.downcase}")
+  i.save
+end
