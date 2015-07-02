@@ -30,5 +30,15 @@ class CartController < ApplicationController
     redirect_to items_path, notice:"Your task was successfully updated"
   end
 
+  def destroy
+    @cart = Cart.find(params[:id])
+    @cart.destroy
+    @cart.save
+    current_user.cart = []
+    current_user.save
+    redirect_to root_path, notice: 'Item was successfully destroyed.'
+
+  end
+
 
 end

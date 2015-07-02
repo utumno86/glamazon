@@ -125,8 +125,10 @@
 							<li>Shipping Cost <span>Free</span></li>
 							<li>Total <span>$61</span></li>
 						</ul>
-							<a class="btn btn-default update" href="">Update</a>
-							<a class="btn btn-default check_out" href="">Check Out</a>
+						<%= link_to 'Clear Cart', cart_path(@cart), method: :delete, data: { confirm: 'Are you
+						sure?' }, class: "btn btn-small btn-alert" %>
+						<%= render 'payola/transactions/checkout',
+											 sellable: @cart %>
 					</div>
 				</div>
 			</div>

@@ -11,6 +11,8 @@ gem 'fog'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'faker'
+gem 'payola-payments'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
