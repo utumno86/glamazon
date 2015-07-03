@@ -1,7 +1,7 @@
 class CartController < ApplicationController
 
   def index
-    quantity = Hash.new(1)
+    quantity = Hash.new(0)
     total_price = 0
     current_user.cart.each do |i|
       item = Item.find(i)
