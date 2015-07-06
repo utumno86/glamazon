@@ -9,8 +9,6 @@ class CartController < ApplicationController
       quantity[i] += 1
       total_price += item.price
     end
-    puts quantity
-    puts total_price
     c = Cart.new
     c.price = (total_price*100).to_i
     c.quantity = quantity
@@ -18,8 +16,6 @@ class CartController < ApplicationController
     c.permalink = SecureRandom.uuid
     c.save
     @cart = Cart.find(c.id)
-    puts @cart
-
   end
 
   def update
