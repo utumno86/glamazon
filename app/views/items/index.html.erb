@@ -1,16 +1,27 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Items</h1>
-
-<% @items.each do |item| %>
-		<h3><%= item.name %> </h3>
-
-			<%unless item.image.blank?%>
-				<p>
-			<%= image_tag(item.image.thumb) %>
-				</p>
-		<%end%>
-		<p><%= item.short_description %> </p>
-		<%= link_to 'Show', item, class: "btn btn-small btn-primary" %>
-<% end  %>
-<p><%=link_to 'Cart', cart_index_path, class: "btn btn-small btn-primary"  %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 padding-right">
+			<div class="features_items"><!--featured_items-->
+				<h2 class="title text-center">Listing Items</h2>
+					<% @items.each do |item| %>
+						<div class="col-sm-3">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+											<%unless item.image.blank?%>
+												<p><%= image_tag(item.image.url) %></p>
+											<%end%>
+										<h4><%= link_to item.name, item %></h4>
+										<p><%= item.short_description %></p>
+										<h2><%= item.price %></h2>
+									</div>
+								</div>
+							</div>
+						</div>
+					<% end  %>
+				
+			</div>
+		</div>
+	</div>
+</div>
