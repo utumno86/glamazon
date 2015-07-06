@@ -27,7 +27,15 @@ class CartController < ApplicationController
     puts @item.name
     current_user.cart << @item.id
     current_user.save
-    redirect_to items_path, notice:"Your task was successfully updated"
+    redirect_to items_path, notice:"Your cart was successfully updated."
+  end
+
+  def delete
+    @item = Item.find(params[:item_id])
+      i = @item.id
+      current_user.cart.pop(i)
+      current_user.save
+      redirect_to items_path, notice:"Your cart was successfully updated."
   end
 
   def destroy
@@ -36,7 +44,7 @@ class CartController < ApplicationController
     @cart.save
     current_user.cart = []
     current_user.save
-    redirect_to root_path, notice: 'Item was successfully destroyed.'
+    redirect_to root_path, notice: 'Your cart is empty.'
 
   end
 

@@ -341,6 +341,10 @@ ul.sub-menu {
     transform: translateY(0);
   }
 }
+
+#items {
+  background: white;
+}
   
 /*************************
 *******Footer CSS******
@@ -1549,6 +1553,10 @@ h2.title {
   
 }
 
+.cart_adjust {
+  display: inline-block;
+}
+
 
 .cart_delete  {
   display: block;
@@ -1608,6 +1616,10 @@ h2.title {
   color: #696763;
   margin-top: 10px;
   padding: 7px 20px;
+}
+
+.total_buttons {
+  display: inline;
 }
 
 

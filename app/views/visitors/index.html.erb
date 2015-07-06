@@ -17,7 +17,7 @@
 									<a href="/"><%= image_tag "logo_full.png" %></a>
 									<h2>Where Posh Cats Shop</h2>
 									<p>Check out the hottest fashions from Meowant Park's runways! </p>
-									<%= link_to 'Get It Now', items_path, class: "btn btn-default get" %>
+									<%= link_to 'Get It Now', cart_index_path, class: "btn btn-default get" %>
 								</div>
 								<div class="col-sm-6">
 									<%= image_tag("cat_cleopatra.jpg", :class => "cat img-responsive") %>
@@ -29,7 +29,7 @@
 									<a href="/"><%= image_tag "logo_full.png" %></a>
 									<h2>Where Posh Cats Shop</h2>
 									<p>Halloween is coming! Kitty is sure to get only treats in our new luchador masks! </p>
-									<%= link_to 'Get It Now', items_path, class: "btn btn-default get" %>
+									<%= link_to 'Get It Now', cart_index_path, class: "btn btn-default get" %>
 								</div>
 								<div class="col-sm-6">
 									<%= image_tag("cat_luchas.jpg", :class => "cat img-responsive") %>
@@ -42,7 +42,7 @@
 									<a href="/"><%= image_tag "logo_full.png" %></a>
 									<h2>Where Posh Cats Shop</h2>
 									<p>You asked, and we delivered! Rainbow gLitter available now! </p>
-									<%= link_to 'Get It Now', items_path, class: "btn btn-default get" %>
+									<%= link_to 'Get It Now', cart_index_path, class: "btn btn-default get" %>
 								</div>
 								<div class="col-sm-6">
 									<%= image_tag("bling_litter.jpg", :class => "cat img-responsive") %>
@@ -85,10 +85,10 @@
 									<div id="collars" class="panel-collapse collapse">
 										<div class="panel-body">
 											<ul>
-												<li><a href="#">Swarovski </a></li>
-												<li><a href="#">Coach </a></li>
-												<li><a href="#">Chanel </a></li>
-												<li><a href="#">Puma</a></li>
+												<li><a href="items">Swarovski </a></li>
+												<li><a href="items">Coach </a></li>
+												<li><a href="items">Chanel </a></li>
+												<li><a href="items">Puma</a></li>
 											</ul>
 										</div>
 									</div>
@@ -106,16 +106,8 @@
 									<div id="fashion" class="panel-collapse collapse">
 										<div class="panel-body">
 											<ul>
-												<li><a href="#">Fendi</a></li>
-												<li><a href="#">Guess</a></li>
-												<li><a href="#">Valentino</a></li>
-												<li><a href="#">Dior</a></li>
-												<li><a href="#">Versace</a></li>
-												<li><a href="#">Armani</a></li>
-												<li><a href="#">Prada</a></li>
-												<li><a href="#">Dolce and Gabbana</a></li>
-												<li><a href="#">Chanel</a></li>
-												<li><a href="#">Gucci</a></li>
+												<li><a href="items">Fendi</a></li>
+												<li><a href="items">Guess</a></li>
 											</ul>
 										</div>
 									</div>
@@ -124,7 +116,7 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#dishes">
+										<a data-toggle="collapse" data-parent="#accordian" href="items">
 											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
 											Feeding Accessories
 										</a>
@@ -133,11 +125,11 @@
 								<div id="dishes" class="panel-collapse collapse">
 									<div class="panel-body">
 										<ul>
-											<li><a href="#">Single Bowl</a></li>
-											<li><a href="#">Double Bowls</a></li>
-											<li><a href="#">Timed Feeders</a></li>
-											<li><a href="#">Water Fountains</a></li>
-											<li><a href="#">Fresh Greens</a></li>
+											<li><a href="items">Single Bowl</a></li>
+											<li><a href="items">Double Bowls</a></li>
+											<li><a href="items">Timed Feeders</a></li>
+											<li><a href="items">Water Fountains</a></li>
+											<li><a href="items">Fresh Greens</a></li>
 										</ul>
 									</div>
 								</div>
@@ -145,31 +137,31 @@
 
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Litter</a></h4>
+									<h4 class="panel-title"><a href="items">Litter</a></h4>
 								</div>
 							</div>
 
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Litter Boxes</a></h4>
+									<h4 class="panel-title"><a href="items">Litter Boxes</a></h4>
 								</div>
 							</div>
 
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Food</a></h4>
+									<h4 class="panel-title"><a href="items">Food</a></h4>
 								</div>
 							</div>
 
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Furniture</a></h4>
+									<h4 class="panel-title"><a href="items">Furniture</a></h4>
 								</div>
 							</div>
 
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Toys</a></h4>
+									<h4 class="panel-title"><a href="items">Toys</a></h4>
 								</div>
 							</div>
 						</div><!--/category-products-->
@@ -179,6 +171,8 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--featured_items-->
 						<h2 class="title text-center">Featured Items</h2>
+						
+					<% 6.times do %>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
@@ -186,76 +180,12 @@
 										<%= image_tag "bling_collars.jpg" %>
 										<h2>$99.99</h2>
 										<p>Blinged Cat Collar</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										<a href="items" class="btn btn-default add-to-cart">See Products</a>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<%= image_tag "bling_collars.jpg" %>
-										<h2>$99.99</h2>
-										<p>Blinged Cat Collar</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<%= image_tag "bling_collars.jpg" %>
-										<h2>$99.99</h2>
-										<p>Blinged Cat Collar</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<%= image_tag "bling_collars.jpg" %>
-										<h2>$99.99</h2>
-										<p>Blinged Cat Collar</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<%= image_tag "bling_collars.jpg" %>
-										<h2>$99.99</h2>
-										<p>Blinged Cat Collar</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<%= image_tag "bling_collars.jpg" %>
-										<h2>$99.99</h2>
-										<p>Blinged Cat Collar</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-									</div><!--/productinfo text-center-->
-								</div><!--/single-products-->
-							</div><!--/product-image-wrapper-->
-						</div><!--/col-sm-4-->
+					<% end %>
 
 				</div><!--/col-sm-9-->
 			</div><!--/row-->
