@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150705235601) do
+ActiveRecord::Schema.define(version: 20150930164135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 20150705235601) do
     t.text     "customer_address"
     t.text     "business_address"
     t.integer  "setup_fee"
+    t.integer  "tax_percent"
   end
 
   add_index "payola_subscriptions", ["guid"], name: "index_payola_subscriptions_on_guid", using: :btree
