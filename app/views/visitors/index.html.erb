@@ -10,14 +10,14 @@
 							<li data-target="#slider-carousel" data-slide-to="1"></li>
 							<li data-target="#slider-carousel" data-slide-to="2"></li>
 						</ol>
-						
+
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-6">
 									<a href="/"><%= image_tag "logo_full.png" %></a>
 									<h2>Where Posh Cats Shop</h2>
 									<p>Check out the hottest fashions from Meowant Park's runways! </p>
-									<%= link_to 'Get It Now', cart_index_path, class: "btn btn-default get" %>
+									<%= link_to 'Get It Now', items_path, class: "btn btn-default get" %>
 								</div>
 								<div class="col-sm-6">
 									<%= image_tag("cat_cleopatra.jpg", :class => "cat img-responsive") %>
@@ -36,7 +36,7 @@
 									<!-- <img src="images/home/pricing.png"  class="pricing" alt="" /> -->
 								</div>
 							</div>
-							
+
 							<div class="item">
 								<div class="col-sm-6">
 									<a href="/"><%= image_tag "logo_full.png" %></a>
@@ -49,9 +49,9 @@
 									<!-- <img src="images/home/pricing.png" class="pricing" alt="" /> -->
 								</div>
 							</div>
-							
+
 						</div>
-						
+
 						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
 						</a>
@@ -59,7 +59,7 @@
 							<i class="fa fa-angle-right"></i>
 						</a>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 	<section><!--/sidebar and feature-->
 		<div class="container">
 			<div class="row">
-				
+
 				<div class="col-sm-3">
 					<div class="left-sidebar">
 						<h2>Category</h2>
@@ -112,7 +112,7 @@
 										</div>
 									</div>
 								</div>
-							
+
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title">
@@ -171,7 +171,7 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--featured_items-->
 						<h2 class="title text-center">Featured Items</h2>
-						
+
 					<% 6.times do %>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
@@ -189,6 +189,5 @@
 
 				</div><!--/col-sm-9-->
 			</div><!--/row-->
-		</div><!--/container-->						
+		</div><!--/container-->
 	</section><!--/sidebar and feature-->
-
