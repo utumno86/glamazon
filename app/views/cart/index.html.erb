@@ -39,12 +39,12 @@
 									<td></td>
 									<td></td>
 									<td class="cart_price">
-										<p><%= item.price %></p>
+										<p><%= number_to_currency(item.price) %></p>
 									</td>
 									<td class="cart_quantity">
 									<%= number %>
 									</td>
-								
+
 									<td class="cart_adjust">
 										<%= form_tag("/cart", action: update_cart_path(item), method: "patch") do %>
 											<input name="item_id" type="hidden" value=<%= item.id %> />
@@ -57,7 +57,7 @@
 									</td>
 								</tr>
 								<% end %>
-			
+
 							<% else %>
 							<%= puts "Your cart is empty." %>
 							<% end %>
@@ -104,7 +104,7 @@
 									<option>Canada</option>
 									<option>Dubai</option>
 								</select>
-								
+
 							</li>
 							<li class="single_field">
 								<label>Region / State:</label>
@@ -118,7 +118,7 @@
 									<option>Canada</option>
 									<option>Dubai</option>
 								</select>
-							
+
 							</li>
 							<li class="single_field zip-field">
 								<label>Zip Code:</label>
@@ -139,15 +139,13 @@
 								<li>Shipping Cost <span>Free</span></li>
 								<li>Total <span><%= number_to_currency(@cart.price.fdiv(100)) %></span></li>
 							</ul>
-							
+
 							<a><%= render 'payola/transactions/checkout',
 												 sellable: @cart, button_class: "btn btn-default check_out" %></a>
-							
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section><!--/#do_action-->
-
-	
