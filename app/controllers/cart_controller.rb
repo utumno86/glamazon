@@ -19,7 +19,6 @@ class CartController < ApplicationController
 
   def update
     @item = Item.find(params[:item_id])
-    puts @item.name
     current_user.cart << @item.id
     current_user.save
     redirect_to items_path, notice:"Your cart was successfully updated."
