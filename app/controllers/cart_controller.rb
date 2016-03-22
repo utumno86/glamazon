@@ -27,9 +27,14 @@ class CartController < ApplicationController
   def delete
     @item = Item.find(params[:item_id])
     i = @item.id
-    current_user.cart.pop(i)
+    puts "I: "
+    puts i
+    puts "Cart " + current_user.cart.to_s
+    puts  "index: " + current_user.cart.find_index(i.to_s)
+    current_user.cart.delete_at(current_user.cart.find_index(i))
+    puts current_user.cart
     current_user.save
-    redirect_to items_path, notice:"Your cart was successfully updated."
+    redirect_to items_path, notice: "Your item has been successfully removed."
   end
 
   def destroy
