@@ -1,5 +1,5 @@
+# Cart Controller, which accumulates item references for the current user
 class CartController < ApplicationController
-
   def index
     quantity = Hash.new(0)
     total_price = 0
@@ -9,7 +9,7 @@ class CartController < ApplicationController
       total_price += item.price
     end
     c = Cart.new
-    c.price = (total_price*100).to_i
+    c.price = (total_price * 100).to_i
     c.quantity = quantity
     c.name = "#{current_user.name}'s Cart"
     c.permalink = SecureRandom.uuid
@@ -21,7 +21,7 @@ class CartController < ApplicationController
     @item = Item.find(params[:item_id])
     current_user.cart << @item.id
     current_user.save
-    redirect_to items_path, notice:"Your cart was successfully updated."
+    redirect_to items_path, notice: 'Your cart was successfully updated.'
   end
 
   def delete
@@ -29,7 +29,7 @@ class CartController < ApplicationController
     i = @item.id.to_s
     current_user.cart.delete_at(current_user.cart.find_index(i))
     current_user.save
-    redirect_to items_path, notice: "Your item has been successfully removed."
+    redirect_to items_path, notice: 'Your item has been successfully removed.'
   end
 
   def destroy
