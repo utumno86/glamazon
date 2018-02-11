@@ -15,6 +15,6 @@
   i.short_description = Faker::Company.bs
   i.description = Faker::Lorem.paragraph
   i.price = Faker::Commerce.price
-  i.remote_image_url = ("http://loremflickr.com/640/480/#{i.name.split.last.downcase}")
+  i.remote_image_url = "https://loremflickr.com/640/480/#{i.name.split.last.downcase}"
   i.save
 end
