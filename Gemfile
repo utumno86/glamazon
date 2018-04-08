@@ -12,6 +12,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'faker'
 gem 'payola-payments'
+gem 'loofah', '~> 2.2.1'
 
 group :development, :test do
   gem 'byebug'
